@@ -2,25 +2,9 @@ import { TanStackDevtools } from '@tanstack/react-devtools'
 import { createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 
-export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      {
-        charSet: 'utf-8',
-      },
-      {
-        content: 'width=device-width, initial-scale=1',
-        name: 'viewport',
-      },
-      {
-        title: 'Laugh Tale',
-      },
-    ],
-  }),
-  shellComponent: RootDocument,
-})
+function RootDocument(props: { children: React.ReactNode }) {
+  const { children } = props
 
-function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
@@ -44,3 +28,21 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     </html>
   )
 }
+
+export const Route = createRootRoute({
+  head: () => ({
+    meta: [
+      {
+        charSet: 'utf-8',
+      },
+      {
+        content: 'width=device-width, initial-scale=1',
+        name: 'viewport',
+      },
+      {
+        title: 'Laugh Tale',
+      },
+    ],
+  }),
+  shellComponent: RootDocument,
+})

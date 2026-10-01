@@ -35,7 +35,11 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "preset": "recommended"
+      "preset": "all"
+    },
+    "domains": {
+      "next": "none",
+      "react": "all"
     }
   },
   "json": {

@@ -9,4 +9,5 @@ const config = defineConfig({
   resolve: { tsconfigPaths: true },
 })
 
+// biome-ignore lint/style/noDefaultExport: configuration file
 export default config
